@@ -20,7 +20,7 @@ const cadastros = [
 
 //Para caso eu troque de computador e queira executar o projeto, bastando trocar o index para o correspondente ao desejado.
 
-const bd = cadastros[0]
+const bd = cadastros[2]
 
 const pool = mysql.createPool({
     host: 'localhost',

@@ -18,4 +18,4 @@ INSERT INTO funcoes (funcao) VALUE ('Supervisor');
 
 INSERT INTO cadastros (nome, email, telefone, funcao) VALUES ('Hiago Gabriel', 'hiagogabriel1132@gmail.com', '(69) 98432-7406', 1);
 
-/*Para interessados, esté é o script responsável por criar o banco de dados.*/
+/*Para interessados, este é o script responsável por criar o banco de dados.*/
