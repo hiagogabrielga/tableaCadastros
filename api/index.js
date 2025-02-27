@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import { apresetarCadastros } from './servicos/visualizarCadastros.js'
+import routerCadastros from './routes/rotaCadastro.js'
+import routerFuncoes from './routes/rotaFuncao.js'
 
 const app = express()
 
@@ -12,16 +13,9 @@ app.use((err, req, res, next) => {
     res.status(500).json({ mensagem: 'Erro interno no servidor', erro: err.message });
 });
 
-app.get('/cadastros:id', async (req, res) => {
-    try {
-        const {id} = req.params
-        const {nome} = req.query
-        const resposta = await apresetarCadastros();
-        res.json(resposta)
-    } catch (error) {
-        res.status(404).json({erro: 'Erro ao buscar dados'})
-    }
-})
+app.use('/cadastros', routerCadastros)
+
+app.use('/funcoes', routerFuncoes)
 
 app.listen(9000, () => {
     const dataAtual = new Date()
