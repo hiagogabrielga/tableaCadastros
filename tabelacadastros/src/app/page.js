@@ -4,41 +4,22 @@ import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [mesagem, setMenasegem] = useState('')
-  function pegarDiaAtual() {
-    let data = new Date
-    let hora = data.getHours()
-    if (hora >= 4 && hora <= 12) {
-      setMenasegem('Bom dia')
-    } else if (hora >= 13 && hora <= 18) {
-      setMenasegem('Boa tarde')
-    } else if (hora >= 19 && hora <= 24) {
-      setMenasegem('Boa noite')
-    } else if (hora >= 0 && hora <= 3) {
-      setMenasegem('Aconcelho que vá dormir')
-    }
-  }
 
-  useEffect(() => {
-    pegarDiaAtual()
-  })
   return (
-    <div>
-      <h2>{mesagem}</h2>
-      <p>Tudo bem?</p>
-      <div>
+    <div className={styles.containerHome}>
+      <div className={styles.containerText}>
         <h3>
           Apresentação
         </h3>
         <p>Eu sou Hiago Gabriel, estudo no IFRO <span>Campus</span> Vilhena e faço o curso de tecnico em informática integrado ao ensino médio. Criei esse site para aprimorar meus conhecimentos e reforçar oque aprendi no ano leitivo de 2024.</p>
       </div>
-      <div>
+      <div className={styles.containerText}>
         <h3>Qual o intuito desse site?</h3>
         <p>
           A funcionalidade desse site é para aprimorar meus conhecimentos no front-end, utilizando React, Next.js e Lucide React para fortalecer a estilização, e no back-end, como o desenvolvimento de uma API e banco de dados. E tambem eu adicionei alguns detalhes por ele.
         </p>
       </div>
-      <div>
+      <div className={styles.containerText}>
         <h3>Quais são as funcionalidades?</h3>
         <p>
           A funcionalidade do site consiste em um CRUD de 2 tabelas no banco de dados, junto com a API. As tabelas são cadastro e funcionários, respectivamente.
@@ -52,7 +33,7 @@ export default function Home() {
           <li><strong>PUT</strong>: Utilizado para atualizar um registro existente.</li>
           <li><strong>PATCH</strong>: Utilizado para atualizar parcialmente um registro existente.</li>
           <li><strong>DELETE</strong>: Utilizado para excluir um registro.</li>
-        </ul> 
+        </ul>
       </div>
     </div>
   );

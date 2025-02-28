@@ -1,0 +1,32 @@
+.containerHeader{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.campOptionsHeader{
+    display: flex;
+    width: 60%;
+}
+
+.campNav{
+    display: flex;
+    width: 100%;
+}
+
+.listNav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.campSubMenu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+}
+
+.optionListNav:hover > .campSubMenu{
+    display: flex;
+}

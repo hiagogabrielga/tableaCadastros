@@ -1,0 +1,27 @@
+.containerHome{
+    background-image: url('/images/imagemFundo.webp');
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerText{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: var(--colorCard);
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--blueShadow) 0px 10px 36px 0px, var(--blueShadow) 0px 0px 0px 1px;
+}
+
+
+.containerText:nth-child(2){
+    margin-left: 19%;
+}
+
+.containerText:nth-child(1){
+    margin-right: 17%;
+}
