@@ -1,0 +1,1 @@
+export const urlPadrao = 'http://localhost:9000'

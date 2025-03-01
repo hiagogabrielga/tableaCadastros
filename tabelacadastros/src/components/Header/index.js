@@ -21,7 +21,7 @@ export default function Header() {
                         </li>
                         <li className={styles.optionListNav}><Link href='#' className={styles.linkNav}>Funcões</Link>
                             <ul className={styles.campSubMenu}>
-                                <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Listar funções</Link></li>
+                                <li className={styles.optionListNavSubMenu}><Link href='/visualizarFuncoes' className={styles.linkNavSubMenu}>Listar funções</Link></li>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Adicionar funções</Link></li>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Editar funções</Link></li>
                             </ul>

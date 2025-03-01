@@ -9,6 +9,15 @@
     list-style-type: none;
 }
 
+.containerHeader li *{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.719);
+}
+
+.containerHeader li *:hover{
+    color: rgb(0, 0, 0);
+}
+
 .campOptionsHeader{
     display: flex;
     width: 60%;
