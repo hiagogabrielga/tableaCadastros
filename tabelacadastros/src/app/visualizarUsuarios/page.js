@@ -25,11 +25,12 @@ export default function VisualizarCadastros() {
         pesquisarCadastros()
     }, [])
     return (
-        <div>
-            <div>
-                <table>
-                    <thead>
-                        <tr key="cabecalhoCadastros">
+        <div className="containerPreTabela">
+            <div className="containerTabela">
+                <h2>Tabela dos Cadastros</h2>
+                <table className="tabela">
+                    <thead className="cabecalhoTabela">
+                        <tr key="cabecalhoCadastros" className="cabecalhoLinhaTabela">
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Email</th>
@@ -37,9 +38,9 @@ export default function VisualizarCadastros() {
                             <th>Função</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="corpoTabela">
                         {dadosApi.map((cadastro) => (
-                            <tr key={`${cadastro.id}_Linha`}>
+                            <tr key={`${cadastro.id}_Linha`} className="corpoLinhaTabela">
                                 <th>{cadastro.id}</th>
                                 <th>{cadastro.nome}</th>
                                 <th>{cadastro.email}</th>

@@ -5,6 +5,8 @@
     width: 100%;
     background-color: rgb(64, 68, 71);
     color: rgb(228, 228, 228);
+    border-top: solid 1px var(--blueShadow);
+    box-shadow: var(--blueShadow) 0px 10px 36px 0px, var(--blueShadow) 0px 0px 0px 1px;
 }
 
 .containerMyContats{

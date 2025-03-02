@@ -5,9 +5,11 @@
 }
 
 :root{
-  --blueShadow: rgba(39, 39, 172, 0.678);
+  --blueShadow: rgba(58, 58, 199, 0.555);
   --colorBody: #d7dae7;
   --colorCard: rgb(240, 232, 232);
+  --primaryColor: rgba(101, 127, 247, 0.562);
+  --secondaryColor: rgba(56, 101, 252, 0.808);
 }
 
 html,
@@ -27,4 +29,80 @@ main {
 footer, header{
   display: flex;
   width: 100%;
+}
+
+.containerPreTabela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.containerTabela {
+  display: flex;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: var(--colorBody);
+  box-shadow: var(--blueShadow) 0px 10px 36px 0px, var(--blueShadow) 0px 0px 0px 1px;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  margin-top: 20px;
+  border-spacing: 0;
+  border-radius: 15px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.cabecalhoTabela {
+  background-color: var(--primaryColor);
+  font-weight: bold;
+}
+
+.cabecalhoLinhaTabela th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--secondaryColor);
+}
+
+
+.corpoTabela {
+  background-color: var(--colorBody);
+}
+
+.corpoLinhaTabela th {
+  padding: 12px;
+  text-align: left;
+}
+
+.corpoLinhaTabela:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.corpoLinhaTabela:hover {
+  background-color: rgba(0, 0, 255, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .containerTabela {
+    padding: 15px;
+  }
+
+  .tabela th {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .cabecalhoLinhaTabela th,
+  .corpoLinhaTabela th {
+    padding: 10px;
+  }
 }

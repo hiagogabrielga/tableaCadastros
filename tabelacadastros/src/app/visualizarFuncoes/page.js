@@ -25,18 +25,19 @@ export default function VisualizarFuncoes() {
         pesquisarFuncoes()
     }, [])
     return (
-        <div>
-            <div>
-                <table>
-                    <thead>
-                        <tr key="cabecalhoFuncoes">
+        <div className="containerPreTabela">
+            <div className="containerTabela">
+                <h2>Tabela das Funções</h2>
+                <table className="tabela">
+                    <thead className="cabecalhoTabela">
+                        <tr key="cabecalhoFuncoes" className="cabecalhoLinhaTabela">
                             <th>ID</th>
                             <th>Nome</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="corpoTabela">
                         {dadosApi.map((funcao) => (
-                            <tr key={`${funcao.id}_Linha`}>
+                            <tr key={`${funcao.id}_Linha`} className="corpoLinhaTabela">
                                 <th>{funcao.id}</th>
                                 <th>{funcao.funcao}</th>
                             </tr>
