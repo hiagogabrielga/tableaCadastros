@@ -1,9 +1,10 @@
 .containerHeader{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 15px;
     box-shadow: var(--blueShadow) 0px 10px 36px 0px, var(--blueShadow) 0px 0px 0px 1px;
+    height: 90px;
 }
 
 .containerHeader li{
@@ -48,4 +49,11 @@
 
 .optionListNav:hover > .campSubMenu{
     display: flex;
+}
+
+.campImgHeader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
 }

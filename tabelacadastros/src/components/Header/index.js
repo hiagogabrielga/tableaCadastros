@@ -16,14 +16,14 @@ export default function Header() {
                             <ul className={styles.campSubMenu}>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Listar cadastros</Link></li>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Adicionar cadastros</Link></li>
-                                <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Editar cadastros</Link></li>
+                                <li className={styles.optionListNavSubMenu}><Link href='/editarUsuario' className={styles.linkNavSubMenu}>Editar cadastros</Link></li>
                             </ul>
                         </li>
                         <li className={styles.optionListNav}><Link href='#' className={styles.linkNav}>Funcões</Link>
                             <ul className={styles.campSubMenu}>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarFuncoes' className={styles.linkNavSubMenu}>Listar funções</Link></li>
                                 <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Adicionar funções</Link></li>
-                                <li className={styles.optionListNavSubMenu}><Link href='/visualizarUsuarios' className={styles.linkNavSubMenu}>Editar funções</Link></li>
+                                <li className={styles.optionListNavSubMenu}><Link href='/editarFuncao' className={styles.linkNavSubMenu}>Editar funções</Link></li>
                             </ul>
                         </li>
                     </ul>

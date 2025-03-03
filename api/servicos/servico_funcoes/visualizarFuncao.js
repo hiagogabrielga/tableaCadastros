@@ -15,17 +15,17 @@ async function executarQuery(sql, params = []) {
 }
 
 async function apresentarFuncoes() {
-    const sql = `SELECT id, funcao FROM funcoes;`;
+    const sql = `SELECT f.id, f.funcao, f.dataalteracao, COUNT(c.id) AS qtd_cadastros FROM funcoes f LEFT JOIN cadastros c ON c.funcao = f.id GROUP BY f.id, f.funcao;`;
     return await executarQuery(sql);
 }
 
 async function apresentarFuncaoPorId(id) {
-    const sql = `SELECT id, funcao FROM funcoes WHERE id = ?;`;
+    const sql = `SELECT f.id, f.funcao, f.dataalteracao, COUNT(c.id) AS qtd_cadastros FROM funcoes f LEFT JOIN cadastros c ON c.funcao = f.id  WHERE f.id = ? GROUP BY f.id, f.funcao;`;
     return await executarQuery(sql, [id]);
 }
 
 async function apresentarFuncoesPorNome(nome) {
-    const sql = `SELECT id, funcao FROM funcoes WHERE funcao LIKE ?;`;
+    const sql = `SELECT f.id, f.funcao, f.dataalteracao, COUNT(c.id) AS qtd_cadastros FROM funcoes f LEFT JOIN cadastros c ON c.funcao = f.id  WHERE f.funcao LIKE ? GROUP BY f.id, f.funcao;`;
     return await executarQuery(sql, [`%${nome}%`]);
 }
 

@@ -2,8 +2,10 @@ create database bancocrudcadastros;
 use bancocrudcadastros;
 
 create table funcoes(
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-funcao varchar(60));
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    funcao varchar(60),
+    dataalteracao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
 create table cadastros (
 	id int auto_increment NOT NULL primary key,

@@ -33,6 +33,8 @@ export default function VisualizarFuncoes() {
                         <tr key="cabecalhoFuncoes" className="cabecalhoLinhaTabela">
                             <th>ID</th>
                             <th>Nome</th>
+                            <th>Cadastros</th>
+                            <th>Última altareção</th>
                         </tr>
                     </thead>
                     <tbody className="corpoTabela">
@@ -40,9 +42,10 @@ export default function VisualizarFuncoes() {
                             <tr key={`${funcao.id}_Linha`} className="corpoLinhaTabela">
                                 <th>{funcao.id}</th>
                                 <th>{funcao.funcao}</th>
+                                <th>{funcao.qtd_cadastros}</th>
+                                <th>{funcao.dataalteracao}</th>
                             </tr>
-                        ))
-                        }
+                        ))}
                     </tbody>
                 </table>
             </div>
