@@ -71,7 +71,7 @@ export default function VisualizarCadastros() {
                                 <th>{cadastro.telefone}</th>
                                 <th>{cadastro.funcao}</th>
                                 <th className="thBtn">
-                                    <Link href={`/editar/${cadastro.id}`} className="btnEdit"><NotebookPen/></Link>
+                                    <Link href={`/tabelaEditarCadastro/${cadastro.id}`} className="btnEdit"><NotebookPen/></Link>
                                     <button onClick={() => handleExcluir(cadastro.id)} className="btnExcluir">
                                         <Trash />
                                     </button>

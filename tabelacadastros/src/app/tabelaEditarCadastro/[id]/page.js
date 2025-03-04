@@ -53,46 +53,62 @@ export default function EditarCadastro() {
     // Enviar os dados atualizados para a API
     async function handleSubmit(event) {
         event.preventDefault();
+
         try {
+            const dadosAtualizados = {
+                ...cadastro,
+                funcao: Number(cadastro.funcao), // Converte funcao para número
+            };
+
             const response = await fetch(`${urlPadrao}/cadastros/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(cadastro),
+                body: JSON.stringify(dadosAtualizados),
             });
 
             if (!response.ok) {
-                throw new Error(`Erro ao atualizar cadastro: ${response.status}`);
+                const responseData = await response.text();
+                return alert(responseData)
             }
 
             alert("Cadastro atualizado com sucesso!");
-            router.push("/"); // Redireciona para a tela inicial ou lista de cadastros
+            router.push("/editarFuncao");
         } catch (error) {
             console.error("Erro ao atualizar cadastro:", error);
             alert(`Erro ao atualizar: ${error.message}`);
         }
     }
 
+
     if (loading) return <p>Carregando...</p>;
     if (error) return <p>Erro: {error}</p>;
 
     return (
-        <div className="containerEdicao">
-            <h2>Editar Cadastro</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Nome:</label>
-                <input type="text" name="nome" value={cadastro.nome ?? ""} onChange={handleChange} required />
-
-                <label>Email:</label>
-                <input type="email" name="email" value={cadastro.email ?? ""} onChange={handleChange} required />
-
-                <label>Telefone:</label>
-                <input type="text" name="telefone" value={cadastro.telefone ?? ""} onChange={handleChange} required />
-
-                <label>Função:</label>
-                <input type="text" name="funcao" value={cadastro.funcao ?? ""} onChange={handleChange} required />
-
-                <button type="submit">Salvar Alterações</button>
-            </form>
+        <div className="containerEdit">
+            <div className="containerFormEdit">
+                <h2>Editar Cadastro</h2>
+                <form onSubmit={handleSubmit} className="formularioEdit">
+                    <div className="containerInputEdit">
+                        <label>Nome:</label>
+                        <input type="text" name="nome" value={cadastro.nome ?? ""} onChange={handleChange} required />
+                    </div>
+                    <div className="containerInputEdit">
+                        <label>Email:</label>
+                        <input type="email" name="email" value={cadastro.email ?? ""} onChange={handleChange} required />
+                    </div>
+                    <div className="containerInputEdit">
+                        <label>Telefone:</label>
+                        <input type="text" name="telefone" value={cadastro.telefone ?? ""} onChange={handleChange} required />
+                    </div>
+                    <div className="containerInputEdit">
+                        <label>Função:</label>
+                        <input type="number" name="funcao" value={cadastro.funcao ?? ""} onChange={handleChange} required />
+                    </div>
+                    <button type="submit" className="btnEditar">Salvar Alterações</button>
+                </form>
+            </div>
         </div>
     );
 }
+
+

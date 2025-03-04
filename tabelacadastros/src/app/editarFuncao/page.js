@@ -12,7 +12,8 @@ export default function VisualizarFuncoes() {
             const response = await fetch(`${urlPadrao}/funcoes`);
 
             if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+                const responseData = await response.text();
+                return alert(responseData)
             }
 
             const data = await response.json();
@@ -31,8 +32,10 @@ export default function VisualizarFuncoes() {
                 method: "DELETE"
             })
             if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`)
+                const responseData = await response.text();
+                return alert(responseData)
             }
+            
             setDadosApi(dadosApi.filter((funcao) => funcao.id !== id));
             alert("Função excluída com sucesso!");
         } catch (error) {
@@ -66,7 +69,7 @@ export default function VisualizarFuncoes() {
                                 <th>{funcao.qtd_cadastros}</th>
                                 <th>{funcao.dataalteracao}</th>
                                 <th className="thBtn">
-                                    <Link href='#' className="btnEdit"><NotebookPen /></Link>
+                                    <Link href={`/tabelaEditarFuncao/${funcao.id}`} className="btnEdit"><NotebookPen /></Link>
                                     <button className="btnExcluir" onClick={() => excluirFuncao(funcao.id)}>
                                         <Trash />
                                     </button>
