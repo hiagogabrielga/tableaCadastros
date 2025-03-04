@@ -72,7 +72,7 @@ export default function EditarCadastro() {
             }
 
             alert("Cadastro atualizado com sucesso!");
-            router.push("/editarFuncao");
+            router.push("/editarUsuario");
         } catch (error) {
             console.error("Erro ao atualizar cadastro:", error);
             alert(`Erro ao atualizar: ${error.message}`);

@@ -31,23 +31,31 @@ async function validaFuncao(funcao) {
     return funcoes.some(f => f.id === funcao);
 }
 
-export async function validarDados(nome, email, telefone, funcao) {
+export async function validarDados(nome, email, telefone, funcao, isPatch = false) {
     let erros = [];
 
-    if (!validaNome(nome)) {
-        erros.push("Nome inválido (mínimo 2 caracteres, sem números ou símbolos).");
+    if (!isPatch || nome !== undefined) {
+        if (!validaNome(nome)) {
+            erros.push("Nome inválido (mínimo 2 caracteres, sem números ou símbolos).");
+        }
     }
 
-    if (!(await validaEmail(email))) {
-        erros.push("E-mail inválido ou já cadastrado.");
+    if (!isPatch || email !== undefined) { 
+        if (!(await validaEmail(email))) {
+            erros.push("E-mail inválido ou já cadastrado.");
+        }
     }
 
-    if (!validaTelefone(telefone)) {
-        erros.push("Telefone inválido (formato esperado: (XX) XXXXX-XXXX).");
+    if (!isPatch || telefone !== undefined) { 
+        if (!validaTelefone(telefone)) {
+            erros.push("Telefone inválido (formato esperado: (XX) XXXXX-XXXX).");
+        }
     }
 
-    if (!(await validaFuncao(funcao))) {
-        erros.push("Função inválida (deve ser um ID válido de função).");
+    if (!isPatch || funcao !== undefined) { 
+        if (!(await validaFuncao(funcao))) {
+            erros.push("Função inválida (deve ser um ID válido de função).");
+        }
     }
 
     if (erros.length > 0) {
