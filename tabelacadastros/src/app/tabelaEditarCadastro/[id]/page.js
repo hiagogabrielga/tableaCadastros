@@ -41,7 +41,6 @@ export default function EditarCadastro() {
         buscarCadastro();
     }, [id]);
 
-    // Atualizar os campos conforme o usuário digita
     function handleChange(event) {
         const { name, value } = event.target;
         setCadastro((prevCadastro) => ({
@@ -50,14 +49,13 @@ export default function EditarCadastro() {
         }));
     }
 
-    // Enviar os dados atualizados para a API
     async function handleSubmit(event) {
         event.preventDefault();
 
         try {
             const dadosAtualizados = {
                 ...cadastro,
-                funcao: Number(cadastro.funcao), // Converte funcao para número
+                funcao: Number(cadastro.funcao),
             };
 
             const response = await fetch(`${urlPadrao}/cadastros/${id}`, {
